@@ -1,13 +1,21 @@
 <input [formControl]='control' type="input">
-    <ng-container *ngIf="control?.get('name').dirty && control?.get('name').touched && control?.get('name')?.errors">
-        <div *ngIf="control?.get('name')?.errors?.['required']">
+    <ng-container *ngIf="control?.dirty && control?.touched && control?.errors">
+        <div *ngIf="control?.errors?.['required']">
             Value is Required 
         </div>
-        <div *ngIf="control?.get('name')?.errors?.['minlength']">
+        <div *ngIf="control?.errors?.['minlength']">
             The Value That You Have Entered is:
-            {{ control.get('name').errors['minlength']?.actualLength}}
+            {{ control.errors['minlength']?.actualLength}}
             The Minimum Length is:
-            {{ control.get('name')?.errors['minlength']?.requiredLength}} 
+            {{ control.errors['minlength']?.requiredLength}} 
             Characters
         </div>
     </ng-container>
+
+    <div>
+        Form Contents: {{control.value | json}}
+    </div>
+    <div>
+        Form Contents: {{control.valid}}
+    </div>
+    <div>Error around Name {{control.errors | json}}</div>

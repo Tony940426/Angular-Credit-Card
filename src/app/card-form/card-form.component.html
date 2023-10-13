@@ -1,11 +1,4 @@
 <Form [formGroup] = "cardForm">
 <!-- Writing in square bracket is writing in code. -->
-    <app-input [control]="cardForm.get('name')"></app-input>
+    <app-input [control]="$any(cardForm.get('name'))"></app-input>
 </Form>
-<div>
-    Form Contents: {{cardForm.value | json}}
-</div>
-<div>
-    Form Contents: {{cardForm.valid}}
-</div>
-<div>Error around Name {{cardForm.get('name')?.errors | json}}</div>
