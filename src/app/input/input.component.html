@@ -1,3 +1,5 @@
+<div class="field">
+<label class="label"></label>
 <input [formControl]='control' type="input">
     <ng-container *ngIf="control?.dirty && control?.touched && control?.errors">
         <div *ngIf="control?.errors?.['required']">
@@ -17,11 +19,4 @@
             Invalid Format.
         </div>
     </ng-container>
-
-    <div>
-        Form Contents: {{control.value | json}}
-    </div>
-    <div>
-        Form Contents: {{control.valid}}
-    </div>
-    <div>Error around Name {{control.errors | json}}</div>
+</div>
