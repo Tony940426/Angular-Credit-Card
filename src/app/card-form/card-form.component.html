@@ -2,7 +2,18 @@
 <!-- Writing in square bracket is writing in code. -->
     <input formControlName='name' type="input">
 </Form>
-
+<ng-container *ngIf="cardForm?.get('name')?.errors">
+    <div *ngIf="cardForm?.get('name')?.errors?.['required']">
+        Value is Required 
+    </div>
+    <div *ngIf="cardForm?.get('name')?.errors?.['minlength']">
+        The Value That You Have Entered is:
+        {{ cardForm.get('name')?.errors['minlength']?.actualLength}}
+        The Minimum Length is:
+        {{ cardForm.get('name')?.errors['minlength']?.requiredLength}} 
+        Characters
+    </div>
+</ng-container>
 <div>
     Form Contents: {{cardForm.value | json}}
 </div>
