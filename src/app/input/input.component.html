@@ -1,6 +1,4 @@
-<Form [formGroup] = "cardForm">
-<!-- Writing in square bracket is writing in code. -->
-    <input formControlName='name' type="input">
+<input formControlName='name' type="input">
     <ng-container *ngIf="cardForm?.get('name').dirty && cardForm?.get('name').touched && cardForm?.get('name')?.errors">
         <div *ngIf="cardForm?.get('name')?.errors?.['required']">
             Value is Required 
@@ -13,11 +11,3 @@
             Characters
         </div>
     </ng-container>
-</Form>
-<div>
-    Form Contents: {{cardForm.value | json}}
-</div>
-<div>
-    Form Contents: {{cardForm.valid}}
-</div>
-<div>Error around Name {{cardForm.get('name')?.errors | json}}</div>
