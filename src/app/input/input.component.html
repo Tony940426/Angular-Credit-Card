@@ -1,13 +1,13 @@
-<input formControlName='name' type="input">
-    <ng-container *ngIf="cardForm?.get('name').dirty && cardForm?.get('name').touched && cardForm?.get('name')?.errors">
-        <div *ngIf="cardForm?.get('name')?.errors?.['required']">
+<input [formControl]='control' type="input">
+    <ng-container *ngIf="control?.get('name').dirty && control?.get('name').touched && control?.get('name')?.errors">
+        <div *ngIf="control?.get('name')?.errors?.['required']">
             Value is Required 
         </div>
-        <div *ngIf="cardForm?.get('name')?.errors?.['minlength']">
+        <div *ngIf="control?.get('name')?.errors?.['minlength']">
             The Value That You Have Entered is:
-            {{ cardForm.get('name').errors['minlength']?.actualLength}}
+            {{ control.get('name').errors['minlength']?.actualLength}}
             The Minimum Length is:
-            {{ cardForm.get('name')?.errors['minlength']?.requiredLength}} 
+            {{ control.get('name')?.errors['minlength']?.requiredLength}} 
             Characters
         </div>
     </ng-container>

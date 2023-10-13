@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-//FormGroup - Represents a single input field 
-//FormControl - Represents a group of controls. It can also contain nested groups
+//FormControl - Represents a single input field 
+//FormGroup - Represents a group of controls. It can also contain nested groups
 
 @Component({
   selector: 'app-card-form',
