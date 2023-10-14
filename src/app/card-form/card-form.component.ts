@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DateFormControl } from '../date-form-control';
 //FormControl - Represents a single input field 
 //FormGroup - Represents a group of controls. It can also contain nested groups
 
@@ -14,7 +15,7 @@ export class CardFormComponent {
   cardForm = new FormGroup ({
     name: new FormControl('',[Validators.required, Validators.minLength(3)]),
     number: new FormControl('',[Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/\d+/)]),
-    expiration: new FormControl('',[Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]),
+    expiration: new DateFormControl('',[Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]),
     securityCode: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)])
   })
   constructor(){}
