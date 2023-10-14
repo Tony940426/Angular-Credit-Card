@@ -1,4 +1,6 @@
-<Form [formGroup] = "cardForm">
-<!-- Writing in square bracket is writing in code. -->
-    <app-input [control]="$any(cardForm.get('name'))"></app-input>
-</Form>
+<div class="ui container">
+    <Form [formGroup] = "cardForm">
+    <!-- Writing in square bracket is writing in code. -->
+        <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
+    </Form>
+</div>
