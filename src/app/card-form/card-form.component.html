@@ -1,10 +1,11 @@
 
-<form [formGroup] = "cardForm">
+<form [formGroup] = "cardForm" (ngSubmit)="onSubmit()">
 <!-- Writing in square bracket is writing in code. -->
     <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
     <app-input label="Card Number" [control]="$any(cardForm.get('number'))"></app-input>
     <app-input label="Expiration" [control]="$any(cardForm.get('expiration'))"></app-input>
     <app-input label="Security Code" [control]="$any(cardForm.get('securityCode'))"></app-input>
+    <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">Submit</button>
 </form>
 <hr>
 <div>Form Content: {{cardForm.value | json}}</div>
