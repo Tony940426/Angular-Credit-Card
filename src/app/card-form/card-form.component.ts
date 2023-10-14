@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CardFormComponent {
   cardForm = new FormGroup ({
-    name: new FormControl<any>('',[Validators.required,Validators.minLength(3)]),
+    name: new FormControl('',[Validators.required,Validators.minLength(3)]),
     number: new FormControl(''),
     expiration: new FormControl(''),
     securityCode: new FormControl('')

@@ -12,7 +12,9 @@ export class InputComponent {
   constructor(){
   }
   showErrors() {
-    const { dirty, touched, errors } = this.control as FormControl;
+    if (!this.control) return false
+
+    const { dirty, touched, errors } = this?.control as FormControl;
     return dirty && touched && errors;
   }
 }
