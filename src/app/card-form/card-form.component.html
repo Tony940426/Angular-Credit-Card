@@ -2,5 +2,8 @@
     <Form [formGroup] = "cardForm">
     <!-- Writing in square bracket is writing in code. -->
         <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
+        <app-input label="Card Number" [control]="$any(cardForm.get('cardNumber'))"></app-input>
+        <app-input label="Expiration" [control]="$any(cardForm.get('expiration'))"></app-input>
+        <app-input label="Security Code" [control]="$any(cardForm.get('securityCode'))"></app-input>
     </Form>
 </div>

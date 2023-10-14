@@ -7,12 +7,12 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Input() control: FormControl;
-  @Input() label: string;
+  @Input() control: FormControl = new FormControl();
+  @Input() label?: string;
   constructor(){
   }
   showErrors() {
-    const { dirty, touched, errors } = this.control;
+    const { dirty, touched, errors } = this.control as FormControl;
     return dirty && touched && errors;
   }
 }

@@ -9,15 +9,15 @@
         </div>
         <div class="help is-danger" *ngIf="control?.errors?.['minlength']">
             The Value That You Have Entered is:
-            {{ control.errors['minlength']?.actualLength}}
+            {{ control.errors?.['minlength']?.actualLength}}
             The Minimum Length is:
-            {{ control.errors['minlength']?.requiredLength}} 
+            {{ control.errors?.['minlength']?.requiredLength}} 
             Characters
         </div>
-        <div class="help is-danger" *ngIf="control?.errors['maxlength']">
-            The Maximum Length is {{control?.errors['maxlength'].requiredLength}}.
+        <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
+            The Maximum Length is {{control.errors?.['maxlength'].requiredLength}}.
         </div>
-        <div  *ngIf="control?.errors['pattern']">
+        <div  *ngIf="control.errors?.['pattern']">
             Invalid Format.
         </div>
     </ng-container>
