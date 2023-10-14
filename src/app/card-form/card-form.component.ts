@@ -12,10 +12,10 @@ export class CardFormComponent {
   formInformation: any;
 
   cardForm = new FormGroup ({
-    name: new FormControl('',[Validators.required,Validators.minLength(3)]),
-    number: new FormControl(''),
-    expiration: new FormControl(''),
-    securityCode: new FormControl('')
+    name: new FormControl('',[Validators.required, Validators.minLength(3)]),
+    number: new FormControl('',[Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/\d+/)]),
+    expiration: new FormControl('',[Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]),
+    securityCode: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)])
   })
   constructor(){}
 
