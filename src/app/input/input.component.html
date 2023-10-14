@@ -17,6 +17,7 @@
         </div>
         <div class="help is-danger" *ngIf="control.errors?.['maxlength']">
             The Maximum Length is {{control.errors?.['maxlength'].requiredLength}}.
+            You are over the maximum length by {{(control.errors?.['maxlength'].actualLength - control.errors?.['maxlength'].requiredLength) }}
         </div>
         <div  *ngIf="control.errors?.['pattern']">
             Invalid Format.
