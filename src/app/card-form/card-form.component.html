@@ -1,14 +1,28 @@
-
-<form [formGroup] = "cardForm" (ngSubmit)="onSubmit()">
-<!-- Writing in square bracket is writing in code. -->
-    <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
-    <app-input label="Card Number" [control]="$any(cardForm.get('number'))"></app-input>
-    <app-input label="Expiration" [control]="$any(cardForm.get('expiration'))"></app-input>
-    <app-input label="Security Code" [control]="$any(cardForm.get('securityCode'))"></app-input>
-    <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">Submit</button>
-    <button class="button is-warning" type="button" (click)="onReset()">Reset</button>
-</form>
-<hr>
-<div>Form Content: {{cardForm.value | json}}</div>
-<div>Form Content: {{cardForm.errors}}</div>
-
+<div class="columns">
+    <div class="column">
+        <app-card 
+            [name]="cardForm.get('name').value"
+            [cardNumber]="cardForm.get('number').value"
+            [expiration]="cardForm.get('expiration').value">
+        </app-card>
+    </div>
+    <div class="column">
+        <form [formGroup] = "cardForm" (ngSubmit)="onSubmit()">
+            <!-- Writing in square bracket is writing in code. -->
+                <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
+                <app-input label="Card Number" [control]="$any(cardForm.get('number'))"></app-input>
+                <div class="columns">
+                    <div class="column">
+                        <app-input label="Expiration" [control]="$any(cardForm.get('expiration'))"></app-input>
+                    </div>
+                    <div class="column">
+                        <app-input label="Security Code" [control]="$any(cardForm.get('securityCode'))"></app-input>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">Submit</button>
+                    <button class="button is-warning" type="button" (click)="onReset()">Reset</button>
+                </div>
+            </form>
+    </div>
+</div>

@@ -18,11 +18,11 @@ export class CardFormComponent {
     expiration: new DateFormControl('',[Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]),
     securityCode: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)])
   })
-  constructor(){}
+  constructor(){
+  }
 
   onSubmit(){
     this.formInformation = this.cardForm.value
-    console.log(this.formInformation)
   }
   onReset(){
     this.cardForm.reset()
