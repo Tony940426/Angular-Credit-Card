@@ -24,6 +24,9 @@ export class CardFormComponent {
     this.formInformation = this.cardForm.value
     console.log(this.formInformation)
   }
+  onReset(){
+    this.cardForm.reset()
+  }
 }
 
 
